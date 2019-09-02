@@ -1,4 +1,3 @@
-import { Dictionary } from "lodash";
 import * as React from "react";
 import { StyleSheet, ViewStyle } from "react-native";
 import {
@@ -17,7 +16,8 @@ import {
   NavigationSwitchRouterConfig,
   SceneView,
   ScreenProps,
-  SwitchRouter
+  SwitchRouter,
+  NavigationParams
 } from "react-navigation";
 type SwitchRouterCreator = (
   routeConfigs: NavigationRouteConfigMap,
@@ -36,8 +36,8 @@ const DEFAULT_TRANSITION = (
 
 interface Props {
   navigation: NavigationScreenProp<
-    NavigationRoute<Dictionary<any>>,
-    Dictionary<any>
+    NavigationRoute<NavigationParams>,
+    NavigationParams
   > & {
     navigationConfig: { transition?: React.ReactNode };
   };
